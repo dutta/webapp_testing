@@ -35,7 +35,7 @@ jobs:
   sofy_workflow_action_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Sofy Validation Job
+    name: Sofy Validation Job After Push
     steps:
       - name: Upload and Send to Sofy
         id: swaj
