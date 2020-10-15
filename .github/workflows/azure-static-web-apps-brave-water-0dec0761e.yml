@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Sofy Validation Job
     steps:
-      - name: Sofy-Workflow-Action
+      - name: Upload and Send to Sofy
         id: swaj
         uses: dutta/Sofy_ASW_Action@1
         with:
