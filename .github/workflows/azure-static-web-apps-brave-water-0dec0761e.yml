@@ -39,7 +39,7 @@ jobs:
     steps:
       - name: Upload and Send to Sofy
         id: swaj
-        uses: dutta/Sofy_ASW_Action@1
+        uses: dutta/Sofy_ASW_Action@2
         with:
           website_url: 'https://brave-water-0dec0761e.azurestaticapps.net'
           application_guid: '66de2259-eb09-48ec-2760-66c47afceb8b'
