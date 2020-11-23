@@ -40,7 +40,7 @@ jobs:
       steps:
         - name: Upload and Send to Sofy
           id: swaj
-          uses: SofyDotAi/SofyAzureWebappAction@v1.0
+          uses: SofyDotAi/SofyAzureWebappAction@v1.1
           with:
             website_url: https://brave-water-0dec0761e.azurestaticapps.net
             subscription_id: '17fcf50c-37cd-4587-a9d0-4b020df220b9'
