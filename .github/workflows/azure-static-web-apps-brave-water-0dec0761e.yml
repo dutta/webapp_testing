@@ -32,21 +32,20 @@ jobs:
           app_artifact_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
   
-  sofy_workflow_action_job:
-    needs: [build_and_deploy_job]
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    name: Sofy Validation Job
-    steps:
-      - name: Upload and Send to Sofy
-        id: swaj
-        uses: dutta/Sofy_ASW_Action@2
-        with:
-          website_url: 'https://brave-water-0dec0761e.azurestaticapps.net'
-          application_guid: '66de2259-eb09-48ec-2760-66c47afceb8b'
-          application_id: '33232'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+  Sofy-Azure-Webapp-Integration:
+      needs: [build_and_deploy_job]
+      if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+      runs-on: ubuntu-latest
+      name: Sofy Validation Job
+      steps:
+        - name: Upload and Send to Sofy
+          id: swaj
+          uses: SofyDotAi/SofyAzureWebappAction@v1.0
+          with:
+            website_url: https://brave-water-0dec0761e.azurestaticapps.net
+            subscription_id: '17fcf50c-37cd-4587-a9d0-4b020df220b9'
+        - name: Get the output time
+          run: echo "The time was ${{ steps.hello.outputs.time }}"
       
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
