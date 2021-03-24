@@ -43,7 +43,7 @@ jobs:
           uses: SofyDotAi/SofyAzureWebappAction@v1.1
           with:
             website_url: https://thankful-wave-0bc0e4c1e.azurestaticapps.net/
-            subscription_id: '17fcf50c-37cd-4587-a9d0-4b020df220b9'
+            subscription_id: 'be7cf85b-a21e-4e0e-a0fa-aab5f0ddcfc5'
         - name: Get the output time
           run: echo "The time was ${{ steps.hello.outputs.time }}"
 
